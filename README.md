@@ -4,15 +4,16 @@
 
 ## 当前状态
 
-- 当前阶段：阶段 0：初始化
+- 当前阶段：阶段 1：核心玩法定义
 - 引擎版本：Godot 4.6.1
-- 当前范围：仅完成项目骨架、仓库初始化与基础文档建立
+- 当前范围：已明确单机关卡 MVP 的核心玩法、目标、失败条件与非目标范围
 
 ## 当前项目结构
 
 - `project.godot`：Godot 项目入口配置
 - `scenes/main.tscn`：最小主场景占位
 - `docs/task-board.md`：阶段看板
+- `docs/rules.md`：核心玩法规则定义
 - `docs/roadmap.md`：轻量阶段路线
 - `docs/test-checklist.md`：当前可执行验证项
 
