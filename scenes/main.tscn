@@ -38,10 +38,11 @@ text = "HP: 3/3"
 [node name="FailLabel" type="Label" parent="HUD"]
 visible = false
 offset_left = 300.0
-offset_top = 220.0
+offset_top = 200.0
 offset_right = 660.0
-offset_bottom = 300.0
+offset_bottom = 340.0
 theme_override_colors/font_color = Color(1, 0.521569, 0.521569, 1)
 theme_override_font_sizes/font_size = 42
-text = "FAIL"
+text = "FAIL\nPress R to Restart"
 horizontal_alignment = 1
+vertical_alignment = 1
