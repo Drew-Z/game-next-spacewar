@@ -4,9 +4,9 @@
 
 ## 当前状态
 
-- 当前阶段：阶段 3：基础敌机与命中判定
+- 当前阶段：阶段 4：玩家受伤与失败判定
 - 引擎版本：Godot 4.6.1
-- 当前范围：主场景已可直接验证玩家移动、基础射击以及敌机被子弹击中后清除
+- 当前范围：主场景已可直接验证玩家受伤、血量显示与血量归零后的失败状态
 
 ## 当前项目结构
 
@@ -15,6 +15,7 @@
 - `scenes/player.tscn`：玩家战机场景
 - `scenes/bullet.tscn`：玩家子弹场景
 - `scenes/enemy_target.tscn`：最小敌机目标场景
+- `scripts/main.gd`：主场景状态与 HUD 更新脚本
 - `scripts/player.gd`：玩家移动与射击脚本
 - `scripts/bullet.gd`：子弹前进脚本
 - `scripts/enemy_target.gd`：敌机移动与命中反馈脚本
