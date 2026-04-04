@@ -4,14 +4,18 @@
 
 ## 当前状态
 
-- 当前阶段：阶段 1：核心玩法定义
+- 当前阶段：阶段 2：玩家基础控制与射击
 - 引擎版本：Godot 4.6.1
-- 当前范围：已明确单机关卡 MVP 的核心玩法、目标、失败条件与非目标范围
+- 当前范围：主场景已可直接验证玩家移动、基础射击和简单子弹发射
 
 ## 当前项目结构
 
 - `project.godot`：Godot 项目入口配置
-- `scenes/main.tscn`：最小主场景占位
+- `scenes/main.tscn`：当前可运行的主场景
+- `scenes/player.tscn`：玩家战机场景
+- `scenes/bullet.tscn`：玩家子弹场景
+- `scripts/player.gd`：玩家移动与射击脚本
+- `scripts/bullet.gd`：子弹前进脚本
 - `docs/task-board.md`：阶段看板
 - `docs/rules.md`：核心玩法规则定义
 - `docs/roadmap.md`：轻量阶段路线
