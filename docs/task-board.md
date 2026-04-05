@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M3：review / PR 信息准备
+- 阶段：M4：是否合回 main 的准备检查
 - 状态：已完成
 
 ## 里程碑检查范围
@@ -19,19 +19,22 @@
 - [x] `CLEAR` 状态也明确提示可按 `R` 重开
 - [x] 局后界面补充了下一步占位提示，结束态表达更完整
 - [x] 原有移动、射击、受伤、失败、重开与清场闭环继续成立
+- [x] `CLEAR` 与 `FAIL` 后会显示更明确的结算信息
+- [x] 结算中会展示最基础的击毁敌机数与结果状态
+- [x] 结算展示与按 `R` 重开流程兼容
+- [x] 当前单局闭环仍然成立，不受结算补充影响
 
 ## 里程碑检查结论
 
-- [x] 已具备 `M3：可演示单局体验` 标准
-- [x] 当前单局体验已可完整演示开局、交战、受压、失败/过关与局后提示过渡
-- [x] 当前已具备正式创建 PR 的条件
-- [x] 当前更适合先做 review，再通过 PR 从 `feature/stage-9-post-run-flow` 合回 `main`
-- [x] 建议 PR：`base = main`，`compare = feature/stage-9-post-run-flow`
-- [x] 建议 PR 标题：`feat(m3): deliver demo-ready single-run flow`
+- [x] 已具备 `M4：完整单局 demo` 标准
+- [x] 当前单局体验已可完整演示开局、交战、受压、失败/过关、结果展示与重开
+- [x] 当前已具备合回 `main` 的条件
+- [x] 当前更适合先合回 `main`，而不是继续在本分支直接做下一阶段
+- [x] 建议先做 review，再通过 PR 从 `feature/stage-10-results-and-score` 合回 `main`
 
 ## 备注
 
-- 当前仍未实现正式结算页面、分数系统、多关卡切换与复杂 UI。
-- 当前分支相对 `main` 差异为 `0  4`，说明主线未落后，当前新增范围覆盖阶段 9 的局后提示补充与 M3 文档收口。
-- 当前分支新增提交范围为：`feat(flow): add post-run status prompts`、`docs(milestone): close M3 demo loop check`、`docs(milestone): close M3 review and release notes`、`docs(milestone): record main merge readiness for M3`，边界仍然清晰。
-- 当前建议的 PR 描述应覆盖：`CLEAR` / `FAIL` 结束态提示完善、`R` 重开在结束态中的过渡体验，以及当前单局体验已达到“可演示版本”标准。
+- 当前结算仍是最小实现，尚未扩展排行榜、复杂数值或多关卡流转。
+- 当前分支相对 `main` 差异为 `0  3`，说明主线未落后，当前新增范围覆盖阶段 10 的结果面板补充与 M4 文档收口。
+- 当前分支新增提交范围为：`feat(results): add basic result panel and score`、`docs(milestone): close M4 full demo check`、`docs(milestone): close M4 review and release notes`，边界仍然清晰。
+- 现在合回 `main` 有助于把“完整单局 demo”沉淀到主线，避免后续阶段继续叠加在 demo 分支上导致边界变宽。
