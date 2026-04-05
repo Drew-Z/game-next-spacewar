@@ -3,16 +3,18 @@ extends Area2D
 @export var speed := 150.0
 @export var horizontal_drift := 25.0
 
+var gameplay_active := true
 var time_passed := 0.0
 var is_spent := false
 
 
 func _ready() -> void:
+	add_to_group("hazards")
 	body_entered.connect(_on_body_entered)
 
 
 func _process(delta: float) -> void:
-	if is_spent:
+	if is_spent or not gameplay_active:
 		return
 
 	time_passed += delta
@@ -23,8 +25,16 @@ func _process(delta: float) -> void:
 		queue_free()
 
 
-func _on_body_entered(body: Node2D) -> void:
+func set_gameplay_active(active: bool) -> void:
+	gameplay_active = active
 	if is_spent:
+		return
+	monitoring = active
+	monitorable = active
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if is_spent or not gameplay_active:
 		return
 	if body.has_method("take_damage"):
 		is_spent = true

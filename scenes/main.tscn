@@ -45,6 +45,18 @@ theme_override_colors/font_color = Color(0.941176, 0.968627, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "HP: 3/3"
 
+[node name="ClearLabel" type="Label" parent="HUD"]
+visible = false
+offset_left = 260.0
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.584314, 0.976471, 0.584314, 1)
+theme_override_font_sizes/font_size = 42
+text = "CLEAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="FailLabel" type="Label" parent="HUD"]
 visible = false
 offset_left = 300.0

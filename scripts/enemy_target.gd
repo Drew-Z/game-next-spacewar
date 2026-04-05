@@ -1,16 +1,20 @@
 extends Area2D
 
+signal cleared
+
 @export var speed := 110.0
 
+var gameplay_active := true
 var is_destroyed := false
 
 
 func _ready() -> void:
+	add_to_group("clear_targets")
 	body_entered.connect(_on_body_entered)
 
 
 func _process(delta: float) -> void:
-	if is_destroyed:
+	if is_destroyed or not gameplay_active:
 		return
 
 	global_position += Vector2.DOWN * speed * delta
@@ -25,6 +29,7 @@ func hit() -> void:
 		return
 
 	is_destroyed = true
+	emit_signal("cleared")
 	monitoring = false
 	monitorable = false
 
@@ -36,8 +41,16 @@ func hit() -> void:
 	queue_free()
 
 
-func _on_body_entered(body: Node2D) -> void:
+func set_gameplay_active(active: bool) -> void:
+	gameplay_active = active
 	if is_destroyed:
+		return
+	monitoring = active
+	monitorable = active
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if is_destroyed or not gameplay_active:
 		return
 	if body.has_method("take_damage"):
 		body.take_damage(1)
