@@ -6,6 +6,7 @@ extends Node2D
 @onready var fail_label := $HUD/FailLabel as Label
 
 var cleared_enemy_targets := 0
+var resolved_enemy_targets := 0
 var total_enemy_targets := 0
 var is_cleared := false
 var is_failed := false
@@ -16,6 +17,7 @@ func _ready() -> void:
 	player.defeated.connect(_on_player_defeated)
 
 	cleared_enemy_targets = 0
+	resolved_enemy_targets = 0
 	total_enemy_targets = 0
 	is_cleared = false
 	is_failed = false
@@ -47,16 +49,19 @@ func _connect_clear_targets() -> void:
 	total_enemy_targets = clear_targets.size()
 
 	for clear_target in clear_targets:
-		if clear_target.has_signal("cleared"):
-			clear_target.cleared.connect(_on_clear_target_cleared)
+		if clear_target.has_signal("resolved"):
+			clear_target.resolved.connect(_on_clear_target_resolved)
 
 
-func _on_clear_target_cleared() -> void:
+func _on_clear_target_resolved(by_player: bool) -> void:
 	if is_failed or is_cleared:
 		return
 
-	cleared_enemy_targets += 1
-	if cleared_enemy_targets >= total_enemy_targets and total_enemy_targets > 0:
+	resolved_enemy_targets += 1
+	if by_player:
+		cleared_enemy_targets += 1
+
+	if resolved_enemy_targets >= total_enemy_targets and total_enemy_targets > 0:
 		_on_stage_cleared()
 
 
