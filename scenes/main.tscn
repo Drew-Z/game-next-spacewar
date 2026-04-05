@@ -47,24 +47,24 @@ text = "HP: 3/3"
 
 [node name="ClearLabel" type="Label" parent="HUD"]
 visible = false
-offset_left = 260.0
-offset_top = 200.0
-offset_right = 700.0
-offset_bottom = 340.0
+offset_left = 180.0
+offset_top = 150.0
+offset_right = 780.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.584314, 0.976471, 0.584314, 1)
-theme_override_font_sizes/font_size = 42
-text = "CLEAR"
+theme_override_font_sizes/font_size = 34
+text = "CLEAR\nPress R to Restart\nNext: Stage flow coming soon"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FailLabel" type="Label" parent="HUD"]
 visible = false
-offset_left = 300.0
-offset_top = 200.0
-offset_right = 660.0
-offset_bottom = 340.0
+offset_left = 180.0
+offset_top = 150.0
+offset_right = 780.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(1, 0.521569, 0.521569, 1)
-theme_override_font_sizes/font_size = 42
-text = "FAIL\nPress R to Restart"
+theme_override_font_sizes/font_size = 34
+text = "FAIL\nPress R to Restart\nNext: Retry flow coming soon"
 horizontal_alignment = 1
 vertical_alignment = 1

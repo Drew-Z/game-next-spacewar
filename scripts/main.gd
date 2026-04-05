@@ -23,6 +23,8 @@ func _ready() -> void:
 	is_failed = false
 	clear_label.visible = false
 	fail_label.visible = false
+	clear_label.text = "CLEAR\nPress R to Restart\nNext: Stage flow coming soon"
+	fail_label.text = "FAIL\nPress R to Restart\nNext: Retry flow coming soon"
 	_on_player_health_changed(player.current_health, player.max_health)
 	_connect_clear_targets()
 
@@ -38,7 +40,7 @@ func _on_player_defeated() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not is_failed:
+	if not (is_failed or is_cleared):
 		return
 	if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_R:
 		get_tree().call_deferred("reload_current_scene")
