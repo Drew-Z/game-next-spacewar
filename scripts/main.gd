@@ -36,7 +36,7 @@ func _on_player_health_changed(current_health: int, max_health: int) -> void:
 func _on_player_defeated() -> void:
 	is_failed = true
 	_set_gameplay_active(false)
-	_show_result("FAIL", "Result: Failed")
+	_show_result("RUN FAILED", "Result: Failed")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -71,7 +71,7 @@ func _on_stage_cleared() -> void:
 	is_cleared = true
 	player.set_controls_enabled(false)
 	_set_gameplay_active(false)
-	_show_result("CLEAR", "Result: Cleared")
+	_show_result("RUN CLEARED", "Result: Cleared")
 
 
 func _set_gameplay_active(active: bool) -> void:
@@ -85,11 +85,17 @@ func _set_gameplay_active(active: bool) -> void:
 
 
 func _show_result(title: String, outcome_text: String) -> void:
+	var summary_text := "Summary: You completed the current single-run demo."
+	if is_failed:
+		summary_text = "Summary: Your ship was lost before the run was cleared."
+
 	result_title_label.text = title
 	result_body_label.text = "\n".join([
 		outcome_text,
 		"Destroyed: %d/%d" % [cleared_enemy_targets, total_enemy_targets],
-		"Press R to Restart",
-		"Next: Results flow placeholder",
+		summary_text,
+		"Now: Press R to play again",
+		"Next: More route choices are planned in a later stage",
+		"Build: This version now supports one complete demo run",
 	])
 	result_panel.visible = true
