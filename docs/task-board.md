@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M5：是否合回 main 的准备检查
+- 阶段：M5：review / PR 信息准备
 - 状态：已完成
 
 ## 里程碑检查范围
@@ -32,13 +32,14 @@
 
 - [x] 已具备 `M5：可试玩展示版` 标准
 - [x] 当前单局体验已可完整演示开局、交战、受压、失败/过关、结算、总结与下一步入口
-- [x] 当前已具备合回 `main` 的条件
-- [x] 当前更适合先合回 `main`，而不是继续在本分支直接做下一阶段
-- [x] 建议先做 review，再通过 PR 从 `feature/stage-11-run-summary-and-next-step` 合回 `main`
+- [x] 当前已具备正式创建 PR 的条件
+- [x] 当前更适合先做 review，再通过 PR 从 `feature/stage-11-run-summary-and-next-step` 合回 `main`
+- [x] 建议 PR：`base = main`，`compare = feature/stage-11-run-summary-and-next-step`
+- [x] 建议 PR 标题：`feat(m5): deliver playable showcase build`
 
 ## 备注
 
 - 当前仍未实现正式主菜单、多关卡切换、排行榜与复杂动画。
-- 当前分支相对 `main` 差异为 `0  3`，说明主线未落后，当前新增范围覆盖阶段 11 的总结信息补充与 M5 文档收口。
-- 当前分支新增提交范围为：`feat(flow): add run summary and next-step hints`、`docs(milestone): close M5 playable demo check`、`docs(milestone): close M5 review and release notes`，边界仍然清晰。
-- 现在合回 `main` 有助于把“可试玩展示版”沉淀到主线，避免后续阶段继续叠加在试玩分支上导致边界变宽。
+- 当前分支相对 `main` 差异为 `0  4`，说明主线未落后，当前新增范围覆盖阶段 11 的总结信息补充与 M5 文档收口。
+- 当前分支新增提交范围为：`feat(flow): add run summary and next-step hints`、`docs(milestone): close M5 playable demo check`、`docs(milestone): close M5 review and release notes`、`docs(milestone): record main merge readiness for M5`，边界仍然清晰。
+- 当前建议的 PR 描述应覆盖：结果面板、基础击毁统计、单局总结信息、下一步入口提示，以及当前版本已达到“可试玩展示版”标准。
