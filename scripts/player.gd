@@ -18,6 +18,7 @@ signal defeated
 @onready var collision_shape := $CollisionShape2D as CollisionShape2D
 
 var current_health := 0
+var controls_enabled := true
 var is_defeated := false
 var damage_cooldown_remaining := 0.0
 var fire_cooldown_remaining := 0.0
@@ -25,6 +26,7 @@ var fire_cooldown_remaining := 0.0
 
 func _ready() -> void:
 	current_health = max_health
+	controls_enabled = true
 	health_changed.emit(current_health, max_health)
 
 
@@ -33,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	fire_cooldown_remaining = maxf(0.0, fire_cooldown_remaining - delta)
 	_update_visual_state()
 
-	if is_defeated:
+	if is_defeated or not controls_enabled:
 		velocity = Vector2.ZERO
 		return
 
@@ -90,6 +92,10 @@ func take_damage(amount: int = 1) -> void:
 		defeated.emit()
 
 	_update_visual_state()
+
+
+func set_controls_enabled(enabled: bool) -> void:
+	controls_enabled = enabled
 
 
 func _clamp_to_viewport() -> void:

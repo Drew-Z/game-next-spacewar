@@ -4,9 +4,9 @@
 
 ## 当前状态
 
-- 当前阶段：M1：review / 发布说明收口
+- 当前阶段：M2：review / PR 信息准备
 - 引擎版本：Godot 4.6.1
-- 当前范围：M1 已完整进入主线 `main`，当前可直接从 `main` 切出新的阶段分支继续开发
+- 当前范围：已形成单局闭环稳定版，包含移动、射击、受伤失败、重开、障碍物压力与清场过关
 
 ## 当前项目结构
 
@@ -15,10 +15,12 @@
 - `scenes/player.tscn`：玩家战机场景
 - `scenes/bullet.tscn`：玩家子弹场景
 - `scenes/enemy_target.tscn`：最小敌机目标场景
+- `scenes/obstacle.tscn`：最小障碍物场景
 - `scripts/main.gd`：主场景状态与 HUD 更新脚本
 - `scripts/player.gd`：玩家移动与射击脚本
 - `scripts/bullet.gd`：子弹前进脚本
 - `scripts/enemy_target.gd`：敌机移动与命中反馈脚本
+- `scripts/obstacle.gd`：障碍物移动与接触伤害脚本
 - `docs/task-board.md`：阶段看板
 - `docs/rules.md`：核心玩法规则定义
 - `docs/roadmap.md`：轻量阶段路线
