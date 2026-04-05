@@ -45,26 +45,30 @@ theme_override_colors/font_color = Color(0.941176, 0.968627, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "HP: 3/3"
 
-[node name="ClearLabel" type="Label" parent="HUD"]
+[node name="ResultPanel" type="PanelContainer" parent="HUD"]
 visible = false
-offset_left = 180.0
-offset_top = 150.0
-offset_right = 780.0
-offset_bottom = 370.0
-theme_override_colors/font_color = Color(0.584314, 0.976471, 0.584314, 1)
-theme_override_font_sizes/font_size = 34
-text = "CLEAR\nPress R to Restart\nNext: Stage flow coming soon"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 220.0
+offset_top = 120.0
+offset_right = 740.0
+offset_bottom = 380.0
 
-[node name="FailLabel" type="Label" parent="HUD"]
-visible = false
-offset_left = 180.0
-offset_top = 150.0
-offset_right = 780.0
-offset_bottom = 370.0
-theme_override_colors/font_color = Color(1, 0.521569, 0.521569, 1)
-theme_override_font_sizes/font_size = 34
-text = "FAIL\nPress R to Restart\nNext: Retry flow coming soon"
+[node name="MarginContainer" type="MarginContainer" parent="HUD/ResultPanel"]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" type="VBoxContainer" parent="HUD/ResultPanel/MarginContainer"]
+theme_override_constants/separation = 12
+
+[node name="ResultTitle" type="Label" parent="HUD/ResultPanel/MarginContainer/Content"]
+theme_override_colors/font_color = Color(0.960784, 0.980392, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "RESULT"
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="ResultBody" type="Label" parent="HUD/ResultPanel/MarginContainer/Content"]
+theme_override_colors/font_color = Color(0.835294, 0.890196, 0.960784, 1)
+theme_override_font_sizes/font_size = 24
+text = "Result: Cleared\nDestroyed: 0/0\nPress R to Restart\nNext: Results flow placeholder"
+horizontal_alignment = 1

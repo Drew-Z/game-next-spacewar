@@ -2,8 +2,9 @@ extends Node2D
 
 @onready var player := $Player
 @onready var health_label := $HUD/HealthLabel as Label
-@onready var clear_label := $HUD/ClearLabel as Label
-@onready var fail_label := $HUD/FailLabel as Label
+@onready var result_panel := $HUD/ResultPanel as PanelContainer
+@onready var result_title_label := $HUD/ResultPanel/MarginContainer/Content/ResultTitle as Label
+@onready var result_body_label := $HUD/ResultPanel/MarginContainer/Content/ResultBody as Label
 
 var cleared_enemy_targets := 0
 var resolved_enemy_targets := 0
@@ -21,10 +22,9 @@ func _ready() -> void:
 	total_enemy_targets = 0
 	is_cleared = false
 	is_failed = false
-	clear_label.visible = false
-	fail_label.visible = false
-	clear_label.text = "CLEAR\nPress R to Restart\nNext: Stage flow coming soon"
-	fail_label.text = "FAIL\nPress R to Restart\nNext: Retry flow coming soon"
+	result_panel.visible = false
+	result_title_label.text = ""
+	result_body_label.text = ""
 	_on_player_health_changed(player.current_health, player.max_health)
 	_connect_clear_targets()
 
@@ -36,7 +36,7 @@ func _on_player_health_changed(current_health: int, max_health: int) -> void:
 func _on_player_defeated() -> void:
 	is_failed = true
 	_set_gameplay_active(false)
-	fail_label.visible = true
+	_show_result("FAIL", "Result: Failed")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -69,9 +69,9 @@ func _on_clear_target_resolved(by_player: bool) -> void:
 
 func _on_stage_cleared() -> void:
 	is_cleared = true
-	clear_label.visible = true
 	player.set_controls_enabled(false)
 	_set_gameplay_active(false)
+	_show_result("CLEAR", "Result: Cleared")
 
 
 func _set_gameplay_active(active: bool) -> void:
@@ -82,3 +82,14 @@ func _set_gameplay_active(active: bool) -> void:
 	for hazard in get_tree().get_nodes_in_group("hazards"):
 		if hazard.has_method("set_gameplay_active"):
 			hazard.set_gameplay_active(active)
+
+
+func _show_result(title: String, outcome_text: String) -> void:
+	result_title_label.text = title
+	result_body_label.text = "\n".join([
+		outcome_text,
+		"Destroyed: %d/%d" % [cleared_enemy_targets, total_enemy_targets],
+		"Press R to Restart",
+		"Next: Results flow placeholder",
+	])
+	result_panel.visible = true
