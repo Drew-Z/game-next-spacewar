@@ -2,10 +2,10 @@
 
 ## 当前阶段
 
-- 阶段：M5：review / PR 信息准备
+- 阶段：M6：review / PR 信息准备
 - 状态：已完成
 
-## 里程碑检查范围
+## 本阶段完成内容
 
 - 玩家移动
 - 玩家射击
@@ -27,19 +27,27 @@
 - [x] 玩家可以在结果面板中直接看到“再来一局”的下一步入口
 - [x] 结果面板补充了当前版本完成度与后续内容占位提示
 - [x] 原有移动、射击、命中、受伤、过关、重开与结果面板闭环继续成立
-
-## 里程碑检查结论
-
-- [x] 已具备 `M5：可试玩展示版` 标准
-- [x] 当前单局体验已可完整演示开局、交战、受压、失败/过关、结算、总结与下一步入口
+- [x] 运行项目后会先进入主菜单
+- [x] 主菜单提供开始游戏入口与展示版说明
+- [x] 从主菜单进入单局后，原有移动、战斗、结算与重开闭环继续成立
+- [x] 本阶段实现保持轻量，没有扩展复杂菜单系统
+- [x] 当前已达到“完整展示版入口体验”标准
+- [x] 当前建议进入 review / 发布说明收口
+- [x] 当前建议准备合回 `main`
+- [x] 当前更适合先做发布说明式收口，而不是继续在本阶段堆功能
+- [x] 下一步更推荐判断并准备合回 `main`
+- [x] 当前已具备合回 `main` 的条件
+- [x] 建议先 review，再通过 PR 从 `feature/stage-12-main-menu-entry` 合回 `main`
 - [x] 当前已具备正式创建 PR 的条件
-- [x] 当前更适合先做 review，再通过 PR 从 `feature/stage-11-run-summary-and-next-step` 合回 `main`
-- [x] 建议 PR：`base = main`，`compare = feature/stage-11-run-summary-and-next-step`
-- [x] 建议 PR 标题：`feat(m5): deliver playable showcase build`
+- [x] 建议 base branch：`main`
+- [x] 建议 compare branch：`feature/stage-12-main-menu-entry`
+- [x] 建议 PR 标题：`feat(m6): add main menu entry for showcase build`
 
 ## 备注
 
-- 当前仍未实现正式主菜单、多关卡切换、排行榜与复杂动画。
-- 当前分支相对 `main` 差异为 `0  4`，说明主线未落后，当前新增范围覆盖阶段 11 的总结信息补充与 M5 文档收口。
-- 当前分支新增提交范围为：`feat(flow): add run summary and next-step hints`、`docs(milestone): close M5 playable demo check`、`docs(milestone): close M5 review and release notes`、`docs(milestone): record main merge readiness for M5`，边界仍然清晰。
-- 当前建议的 PR 描述应覆盖：结果面板、基础击毁统计、单局总结信息、下一步入口提示，以及当前版本已达到“可试玩展示版”标准。
+- 当前仍未实现设置页、多关卡菜单、排行榜与复杂动画。
+- 当前 M6 已具备“完整展示版入口体验”标准。
+- 当前分支相对 `main` 的新增范围为 3 个提交：阶段 12 功能提交 + 2 个 M6 文档收口提交。
+- 主线当前未落后，分支边界清晰；现在合并更有助于后续阶段继续从稳定主线展开。
+- 建议 PR 描述要点：主菜单入口、开始游戏流程、展示版说明、当前版本达到“完整展示版入口体验”标准。
+- 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
