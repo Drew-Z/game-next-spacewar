@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M6：是否合回 main 的准备检查
+- 阶段：M6：review / PR 信息准备
 - 状态：已完成
 
 ## 本阶段完成内容
@@ -38,6 +38,10 @@
 - [x] 下一步更推荐判断并准备合回 `main`
 - [x] 当前已具备合回 `main` 的条件
 - [x] 建议先 review，再通过 PR 从 `feature/stage-12-main-menu-entry` 合回 `main`
+- [x] 当前已具备正式创建 PR 的条件
+- [x] 建议 base branch：`main`
+- [x] 建议 compare branch：`feature/stage-12-main-menu-entry`
+- [x] 建议 PR 标题：`feat(m6): add main menu entry for showcase build`
 
 ## 备注
 
@@ -45,3 +49,5 @@
 - 当前 M6 已具备“完整展示版入口体验”标准。
 - 当前分支相对 `main` 的新增范围为 3 个提交：阶段 12 功能提交 + 2 个 M6 文档收口提交。
 - 主线当前未落后，分支边界清晰；现在合并更有助于后续阶段继续从稳定主线展开。
+- 建议 PR 描述要点：主菜单入口、开始游戏流程、展示版说明、当前版本达到“完整展示版入口体验”标准。
+- 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
