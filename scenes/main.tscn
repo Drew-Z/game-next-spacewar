@@ -45,6 +45,16 @@ theme_override_colors/font_color = Color(0.941176, 0.968627, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "HP: 3/3"
 
+[node name="PauseHintLabel" type="Label" parent="HUD"]
+offset_left = 720.0
+offset_top = 18.0
+offset_right = 938.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.701961, 0.776471, 0.862745, 1)
+theme_override_font_sizes/font_size = 18
+text = "Esc: Pause"
+horizontal_alignment = 2
+
 [node name="ResultPanel" type="PanelContainer" parent="HUD"]
 visible = false
 offset_left = 220.0
@@ -72,3 +82,42 @@ theme_override_colors/font_color = Color(0.835294, 0.890196, 0.960784, 1)
 theme_override_font_sizes/font_size = 22
 text = "Result: Cleared\nDestroyed: 0/0\nSummary: You completed the current single-run demo.\nNow: Press R to play again\nNext: More route choices are planned in a later stage\nBuild: This version now supports one complete demo run"
 horizontal_alignment = 1
+
+[node name="PausePanel" type="PanelContainer" parent="HUD"]
+visible = false
+offset_left = 260.0
+offset_top = 130.0
+offset_right = 700.0
+offset_bottom = 330.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/PausePanel"]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" type="VBoxContainer" parent="HUD/PausePanel/MarginContainer"]
+theme_override_constants/separation = 14
+
+[node name="PauseTitle" type="Label" parent="HUD/PausePanel/MarginContainer/Content"]
+theme_override_colors/font_color = Color(0.960784, 0.980392, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="PauseBody" type="Label" parent="HUD/PausePanel/MarginContainer/Content"]
+theme_override_colors/font_color = Color(0.835294, 0.890196, 0.960784, 1)
+theme_override_font_sizes/font_size = 20
+text = "Take a short break, then continue the current run or return to the main menu."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton" type="Button" parent="HUD/PausePanel/MarginContainer/Content"]
+custom_minimum_size = Vector2(0, 48)
+theme_override_font_sizes/font_size = 20
+text = "Continue"
+
+[node name="BackToMenuButton" type="Button" parent="HUD/PausePanel/MarginContainer/Content"]
+custom_minimum_size = Vector2(0, 48)
+theme_override_font_sizes/font_size = 20
+text = "Return to Main Menu"
