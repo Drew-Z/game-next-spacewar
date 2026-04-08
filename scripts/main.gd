@@ -1,11 +1,10 @@
 extends Node2D
 
+const RUN_RESULT_SCENE_PATH := "res://scenes/run_result.tscn"
+
 @onready var player := $Player
 @onready var health_label := $HUD/HealthLabel as Label
 @onready var pause_hint_label := $HUD/PauseHintLabel as Label
-@onready var result_panel := $HUD/ResultPanel as PanelContainer
-@onready var result_title_label := $HUD/ResultPanel/MarginContainer/Content/ResultTitle as Label
-@onready var result_body_label := $HUD/ResultPanel/MarginContainer/Content/ResultBody as Label
 @onready var pause_panel := $HUD/PausePanel as PanelContainer
 @onready var continue_button := $HUD/PausePanel/MarginContainer/Content/ContinueButton as Button
 @onready var back_to_menu_button := $HUD/PausePanel/MarginContainer/Content/BackToMenuButton as Button
@@ -34,10 +33,7 @@ func _ready() -> void:
 	is_failed = false
 	is_paused = false
 	get_tree().paused = false
-	result_panel.visible = false
 	pause_panel.visible = false
-	result_title_label.text = ""
-	result_body_label.text = ""
 	pause_hint_label.visible = true
 	_on_player_health_changed(player.current_health, player.max_health)
 	_connect_clear_targets()
@@ -50,7 +46,7 @@ func _on_player_health_changed(current_health: int, max_health: int) -> void:
 func _on_player_defeated() -> void:
 	is_failed = true
 	_set_gameplay_active(false)
-	_show_result("RUN FAILED", "Result: Failed")
+	_go_to_result_screen("RUN FAILED", "Result: Failed")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -63,13 +59,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			_pause_game()
 		get_viewport().set_input_as_handled()
 		return
-
-	if not (is_failed or is_cleared):
-		return
-	if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_R:
-		get_tree().paused = false
-		get_tree().call_deferred("reload_current_scene")
-
 
 func _connect_clear_targets() -> void:
 	var clear_targets := get_tree().get_nodes_in_group("clear_targets")
@@ -96,7 +85,7 @@ func _on_stage_cleared() -> void:
 	is_cleared = true
 	player.set_controls_enabled(false)
 	_set_gameplay_active(false)
-	_show_result("RUN CLEARED", "Result: Cleared")
+	_go_to_result_screen("RUN CLEARED", "Result: Cleared")
 
 
 func _set_gameplay_active(active: bool) -> void:
@@ -109,7 +98,7 @@ func _set_gameplay_active(active: bool) -> void:
 			hazard.set_gameplay_active(active)
 
 
-func _show_result(title: String, outcome_text: String) -> void:
+func _go_to_result_screen(title: String, outcome_text: String) -> void:
 	var summary_text := "Summary: You completed the current single-run demo."
 	if is_failed:
 		summary_text = "Summary: Your ship was lost before the run was cleared."
@@ -117,16 +106,15 @@ func _show_result(title: String, outcome_text: String) -> void:
 	if is_paused:
 		_resume_game()
 
-	result_title_label.text = title
-	result_body_label.text = "\n".join([
+	RunResultState.store_result(
+		title,
 		outcome_text,
-		"Destroyed: %d/%d" % [cleared_enemy_targets, total_enemy_targets],
+		cleared_enemy_targets,
+		total_enemy_targets,
 		summary_text,
-		"Now: Press R to play again",
-		"Next: More route choices are planned in a later stage",
-		"Build: This version now supports one complete demo run",
-	])
-	result_panel.visible = true
+		"Build: This version now supports a separate result screen"
+	)
+	get_tree().change_scene_to_file(RUN_RESULT_SCENE_PATH)
 
 
 func _pause_game() -> void:

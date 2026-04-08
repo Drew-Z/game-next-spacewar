@@ -4,9 +4,9 @@
 
 ## 当前状态
 
-- 当前阶段：M8：review / PR 信息准备
+- 当前阶段：M9：review / PR 信息准备
 - 引擎版本：Godot 4.6.1
-- 当前范围：已形成带主菜单、设置入口与暂停返回能力的可试玩展示版，包含单局完整闭环、结果面板、总结信息、下一步入口提示与最小音量控制
+- 当前范围：已形成带主菜单、设置入口、暂停返回与独立结果页的可试玩展示版，包含单局完整闭环、基础击毁统计、总结信息、下一步入口提示与最小音量控制
 
 ## 当前项目结构
 
@@ -16,11 +16,14 @@
 - `scenes/bullet.tscn`：玩家子弹场景
 - `scenes/enemy_target.tscn`：最小敌机目标场景
 - `scenes/obstacle.tscn`：最小障碍物场景
+- `scenes/run_result.tscn`：单局结束后的独立结果页场景
 - `scripts/main.gd`：主场景状态与 HUD 更新脚本
 - `scripts/player.gd`：玩家移动与射击脚本
 - `scripts/bullet.gd`：子弹前进脚本
 - `scripts/enemy_target.gd`：敌机移动与命中反馈脚本
 - `scripts/obstacle.gd`：障碍物移动与接触伤害脚本
+- `scripts/run_result.gd`：独立结果页交互脚本
+- `scripts/run_result_state.gd`：战斗场景与结果页之间的最小结果数据传递脚本
 - `docs/task-board.md`：阶段看板
 - `docs/rules.md`：核心玩法规则定义
 - `docs/roadmap.md`：轻量阶段路线

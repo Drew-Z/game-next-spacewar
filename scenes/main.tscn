@@ -55,34 +55,6 @@ theme_override_font_sizes/font_size = 18
 text = "Esc: Pause"
 horizontal_alignment = 2
 
-[node name="ResultPanel" type="PanelContainer" parent="HUD"]
-visible = false
-offset_left = 220.0
-offset_top = 120.0
-offset_right = 740.0
-offset_bottom = 380.0
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD/ResultPanel"]
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="Content" type="VBoxContainer" parent="HUD/ResultPanel/MarginContainer"]
-theme_override_constants/separation = 12
-
-[node name="ResultTitle" type="Label" parent="HUD/ResultPanel/MarginContainer/Content"]
-theme_override_colors/font_color = Color(0.960784, 0.980392, 1, 1)
-theme_override_font_sizes/font_size = 36
-text = "RUN RESULT"
-horizontal_alignment = 1
-
-[node name="ResultBody" type="Label" parent="HUD/ResultPanel/MarginContainer/Content"]
-theme_override_colors/font_color = Color(0.835294, 0.890196, 0.960784, 1)
-theme_override_font_sizes/font_size = 22
-text = "Result: Cleared\nDestroyed: 0/0\nSummary: You completed the current single-run demo.\nNow: Press R to play again\nNext: More route choices are planned in a later stage\nBuild: This version now supports one complete demo run"
-horizontal_alignment = 1
-
 [node name="PausePanel" type="PanelContainer" parent="HUD"]
 visible = false
 offset_left = 260.0
