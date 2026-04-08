@@ -57,7 +57,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.835294, 0.890196, 0.960784, 1)
 theme_override_font_sizes/font_size = 22
-text = "Result: Unknown\nDestroyed: 0/0\nSummary: Run data is not ready yet.\nReplay: Press R or select Play Again\nMenu: Press M or select Return to Main Menu\nBuild: Showcase flow update pending"
+text = "Status: Unknown\nDestroyed Targets: 0/0\nSummary: Run data is not ready yet.\nReplay: Press R or select Play Again\nMenu: Press M, Esc, or select Main Menu\nBuild: Showcase flow update pending"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -71,4 +71,4 @@ text = "Play Again"
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Return to Main Menu"
+text = "Main Menu"
