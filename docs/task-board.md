@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M12：是否合回 main 的准备检查
+- 阶段：M12：review / PR 信息准备
 - 状态：已完成
 
 ## 本阶段完成内容
@@ -125,6 +125,10 @@
 - [x] 下一步应判断是否合回 `main`
 - [x] 当前已具备合回 `main` 的条件
 - [x] 建议先 review，再通过 PR 从 `feature/stage-18-about-and-help-entry` 合回 `main`
+- [x] 当前已具备正式创建 PR 的条件
+- [x] 建议 base branch：`main`
+- [x] 建议 compare branch：`feature/stage-18-about-and-help-entry`
+- [x] 建议 PR 标题：`feat(m12): add about and help entry`
 
 ## 备注
 
@@ -176,3 +180,5 @@
 - 当前展示版已具备主菜单、设置、帮助入口、暂停返回、独立结果页与版本标识的完整入口说明闭环。
 - 主线当前未落后，分支边界清晰；现在合并更有助于后续阶段继续从稳定主线展开。
 - 当前更适合先 review，再通过 PR 合回 `main`，而不是继续在当前分支直接做下一阶段。
+- 建议 PR 描述要点：About / Help 入口、项目说明、基础操作说明、返回后仍可正常开始游戏、当前版本达到“可交付展示版入口说明”标准。
+- 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
