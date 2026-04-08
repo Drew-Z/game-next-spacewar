@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M10：是否合回 main 的准备检查
+- 阶段：M10：review / PR 信息准备
 - 状态：已完成
 
 ## 本阶段完成内容
@@ -95,6 +95,10 @@
 - [x] 下一步应判断是否合回 `main`
 - [x] 当前已具备合回 `main` 的条件
 - [x] 建议先 review，再通过 PR 从 `feature/stage-16-title-polish-and-version-badge` 合回 `main`
+- [x] 当前已具备正式创建 PR 的条件
+- [x] 建议 base branch：`main`
+- [x] 建议 compare branch：`feature/stage-16-title-polish-and-version-badge`
+- [x] 建议 PR 标题：`feat(m10): polish showcase ui copy consistency`
 
 ## 备注
 
@@ -130,3 +134,5 @@
 - 主线当前未落后，分支边界清晰；现在合并更有助于后续阶段继续从稳定主线展开。
 - 当前更适合先 review，再通过 PR 合回 `main`，而不是继续在当前分支直接做下一阶段。
 - 当前版本已经具备从主菜单、设置、暂停到独立结果页的统一展示表达。
+- 建议 PR 描述要点：主菜单文案统一、设置界面文案统一、暂停界面文案统一、结果页文案统一、当前版本达到“展示版界面一致性”标准。
+- 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
