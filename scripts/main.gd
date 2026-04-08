@@ -1,6 +1,7 @@
 extends Node2D
 
 const RUN_RESULT_SCENE_PATH := "res://scenes/run_result.tscn"
+const BUILD_LABEL := "Build: Showcase Build 0.17"
 
 @onready var player := $Player
 @onready var health_label := $HUD/HealthLabel as Label
@@ -112,7 +113,7 @@ func _go_to_result_screen(title: String, outcome_text: String) -> void:
 		cleared_enemy_targets,
 		total_enemy_targets,
 		summary_text,
-		"Build: This showcase now uses a separate result screen"
+		BUILD_LABEL
 	)
 	get_tree().change_scene_to_file(RUN_RESULT_SCENE_PATH)
 
