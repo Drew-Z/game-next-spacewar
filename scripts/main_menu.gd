@@ -4,17 +4,22 @@ const MIN_VOLUME_DB := -80.0
 
 @onready var start_button := $MarginContainer/Content/StartButton as Button
 @onready var settings_button := $MarginContainer/Content/SettingsButton as Button
+@onready var help_button := $MarginContainer/Content/HelpButton as Button
 @onready var settings_layer := $SettingsLayer as ColorRect
 @onready var volume_slider := $SettingsLayer/SettingsPanel/MarginContainer/Content/VolumeSlider as HSlider
 @onready var volume_value_label := $SettingsLayer/SettingsPanel/MarginContainer/Content/VolumeValue as Label
-@onready var back_button := $SettingsLayer/SettingsPanel/MarginContainer/Content/BackButton as Button
+@onready var settings_back_button := $SettingsLayer/SettingsPanel/MarginContainer/Content/BackButton as Button
+@onready var help_layer := $HelpLayer as ColorRect
+@onready var help_back_button := $HelpLayer/HelpPanel/MarginContainer/Content/BackButton as Button
 
 
 func _ready() -> void:
 	start_button.grab_focus()
 	start_button.pressed.connect(_on_start_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
-	back_button.pressed.connect(_on_back_button_pressed)
+	help_button.pressed.connect(_on_help_button_pressed)
+	settings_back_button.pressed.connect(_on_settings_back_button_pressed)
+	help_back_button.pressed.connect(_on_help_back_button_pressed)
 	volume_slider.value_changed.connect(_on_volume_slider_value_changed)
 	_sync_volume_slider()
 
@@ -28,9 +33,19 @@ func _on_settings_button_pressed() -> void:
 	volume_slider.grab_focus()
 
 
-func _on_back_button_pressed() -> void:
+func _on_help_button_pressed() -> void:
+	help_layer.visible = true
+	help_back_button.grab_focus()
+
+
+func _on_settings_back_button_pressed() -> void:
 	settings_layer.visible = false
 	settings_button.grab_focus()
+
+
+func _on_help_back_button_pressed() -> void:
+	help_layer.visible = false
+	help_button.grab_focus()
 
 
 func _on_volume_slider_value_changed(value: float) -> void:

@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M11：review / PR 信息准备
+- 阶段：阶段 18：关于页与帮助入口
 - 状态：已完成
 
 ## 本阶段完成内容
@@ -114,6 +114,10 @@
 - [x] 建议 base branch：`main`
 - [x] 建议 compare branch：`feature/stage-17-version-badge-and-build-label`
 - [x] 建议 PR 标题：`feat(m11): add showcase build badge`
+- [x] 主菜单中已加入可进入的 `About / Help` 入口
+- [x] 帮助页中提供了当前展示版的简短项目说明
+- [x] 帮助页中提供了移动、射击、暂停与重开的基础操作说明
+- [x] 从帮助页返回后，仍可正常开始游戏并进入原有单局流程
 
 ## 备注
 
@@ -159,3 +163,4 @@
 - 当前更适合先 review，再通过 PR 合回 `main`，而不是继续在当前分支直接做下一阶段。
 - 建议 PR 描述要点：展示版 build 标识、主菜单中的 build 信息、设置界面中的 build 信息、结果页中的 build 信息、当前版本达到“展示版版本标识”标准。
 - 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
+- 当前阶段目标是补齐“About / Help 入口与基础说明”，不扩展复杂帮助系统或多页帮助文档。
