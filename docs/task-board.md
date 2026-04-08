@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M11：是否合回 main 的准备检查
+- 阶段：M11：review / PR 信息准备
 - 状态：已完成
 
 ## 本阶段完成内容
@@ -110,6 +110,10 @@
 - [x] 下一步应判断是否合回 `main`
 - [x] 当前已具备合回 `main` 的条件
 - [x] 建议先 review，再通过 PR 从 `feature/stage-17-version-badge-and-build-label` 合回 `main`
+- [x] 当前已具备正式创建 PR 的条件
+- [x] 建议 base branch：`main`
+- [x] 建议 compare branch：`feature/stage-17-version-badge-and-build-label`
+- [x] 建议 PR 标题：`feat(m11): add showcase build badge`
 
 ## 备注
 
@@ -153,3 +157,5 @@
 - 当前 build 标识已经能清楚表达当前版本处于展示版阶段，且不会破坏原有主菜单、设置、暂停、结果页与重开流程。
 - 主线当前未落后，分支边界清晰；现在合并更有助于后续阶段继续从稳定主线展开。
 - 当前更适合先 review，再通过 PR 合回 `main`，而不是继续在当前分支直接做下一阶段。
+- 建议 PR 描述要点：展示版 build 标识、主菜单中的 build 信息、设置界面中的 build 信息、结果页中的 build 信息、当前版本达到“展示版版本标识”标准。
+- 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
