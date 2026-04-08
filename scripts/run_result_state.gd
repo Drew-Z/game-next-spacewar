@@ -9,7 +9,7 @@ static var outcome_text := "Result: Unknown"
 static var destroyed_count := 0
 static var total_targets := 0
 static var summary_text := "Summary: Run data is not ready yet."
-static var build_text := "Build: Showcase flow update pending"
+static var build_text := "Build: Showcase Build 0.17"
 
 
 static func store_result(title: String, outcome: String, destroyed: int, total: int, summary: String, build: String) -> void:
@@ -27,4 +27,4 @@ static func reset() -> void:
 	destroyed_count = 0
 	total_targets = 0
 	summary_text = "Summary: Run data is not ready yet."
-	build_text = "Build: Showcase flow update pending"
+	build_text = "Build: Showcase Build 0.17"

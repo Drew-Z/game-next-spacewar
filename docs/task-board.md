@@ -2,7 +2,7 @@
 
 ## 当前阶段
 
-- 阶段：M10：review / PR 信息准备
+- 阶段：M11：review / PR 信息准备
 - 状态：已完成
 
 ## 本阶段完成内容
@@ -99,6 +99,21 @@
 - [x] 建议 base branch：`main`
 - [x] 建议 compare branch：`feature/stage-16-title-polish-and-version-badge`
 - [x] 建议 PR 标题：`feat(m10): polish showcase ui copy consistency`
+- [x] 主菜单中已加入可直接看到的展示版版本角标
+- [x] 设置面板中同步展示当前展示版的 build 标识
+- [x] 独立结果页中的 build 行已同步到当前展示版版本标识
+- [x] 版本标识补充后，主菜单、设置、开始游戏、暂停、结果页、重开与返回主菜单流程仍正常
+- [x] 当前已达到“展示版版本标识”标准
+- [x] 当前建议进入 review / 发布说明收口
+- [x] 当前建议准备合回 `main`
+- [x] 当前更适合先做发布说明式收口，而不是继续在本阶段堆功能
+- [x] 下一步应判断是否合回 `main`
+- [x] 当前已具备合回 `main` 的条件
+- [x] 建议先 review，再通过 PR 从 `feature/stage-17-version-badge-and-build-label` 合回 `main`
+- [x] 当前已具备正式创建 PR 的条件
+- [x] 建议 base branch：`main`
+- [x] 建议 compare branch：`feature/stage-17-version-badge-and-build-label`
+- [x] 建议 PR 标题：`feat(m11): add showcase build badge`
 
 ## 备注
 
@@ -135,4 +150,12 @@
 - 当前更适合先 review，再通过 PR 合回 `main`，而不是继续在当前分支直接做下一阶段。
 - 当前版本已经具备从主菜单、设置、暂停到独立结果页的统一展示表达。
 - 建议 PR 描述要点：主菜单文案统一、设置界面文案统一、暂停界面文案统一、结果页文案统一、当前版本达到“展示版界面一致性”标准。
+- 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
+- 当前阶段目标是补齐“版本标识与展示版角标”，不扩展复杂版本系统或自动构建号生成。
+- 当前 M11 已具备“展示版版本标识”标准。
+- 当前分支相对 `main` 的新增范围为 3 个提交：阶段 17 功能提交 + 2 个 M11 文档收口提交。
+- 当前 build 标识已经能清楚表达当前版本处于展示版阶段，且不会破坏原有主菜单、设置、暂停、结果页与重开流程。
+- 主线当前未落后，分支边界清晰；现在合并更有助于后续阶段继续从稳定主线展开。
+- 当前更适合先 review，再通过 PR 合回 `main`，而不是继续在当前分支直接做下一阶段。
+- 建议 PR 描述要点：展示版 build 标识、主菜单中的 build 信息、设置界面中的 build 信息、结果页中的 build 信息、当前版本达到“展示版版本标识”标准。
 - 当前更建议先做 review，再创建 PR；本次未执行任何 GitHub 操作。
