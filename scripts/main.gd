@@ -46,7 +46,7 @@ func _on_player_health_changed(current_health: int, max_health: int) -> void:
 func _on_player_defeated() -> void:
 	is_failed = true
 	_set_gameplay_active(false)
-	_go_to_result_screen("RUN FAILED", "Result: Failed")
+	_go_to_result_screen("RUN FAILED", "Status: Failed")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -85,7 +85,7 @@ func _on_stage_cleared() -> void:
 	is_cleared = true
 	player.set_controls_enabled(false)
 	_set_gameplay_active(false)
-	_go_to_result_screen("RUN CLEARED", "Result: Cleared")
+	_go_to_result_screen("RUN CLEARED", "Status: Cleared")
 
 
 func _set_gameplay_active(active: bool) -> void:
@@ -112,7 +112,7 @@ func _go_to_result_screen(title: String, outcome_text: String) -> void:
 		cleared_enemy_targets,
 		total_enemy_targets,
 		summary_text,
-		"Build: This version now supports a separate result screen"
+		"Build: This showcase now uses a separate result screen"
 	)
 	get_tree().change_scene_to_file(RUN_RESULT_SCENE_PATH)
 

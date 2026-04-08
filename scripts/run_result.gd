@@ -13,10 +13,10 @@ func _ready() -> void:
 	result_title_label.text = RunResultState.outcome_title
 	result_body_label.text = "\n".join([
 		RunResultState.outcome_text,
-		"Destroyed: %d/%d" % [RunResultState.destroyed_count, RunResultState.total_targets],
+		"Destroyed Targets: %d/%d" % [RunResultState.destroyed_count, RunResultState.total_targets],
 		RunResultState.summary_text,
 		"Replay: Press R or select Play Again",
-		"Menu: Press M or select Return to Main Menu",
+		"Menu: Press M, Esc, or select Main Menu",
 		RunResultState.build_text,
 	])
 
