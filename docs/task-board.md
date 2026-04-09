@@ -1,7 +1,7 @@
 ﻿# Task Board
 
 ## 当前阶段
-- 阶段：M13：是否合回 main 的准备检查
+- 阶段：M13：review / PR 信息准备
 - 状态：已完成
 
 ## 当前里程碑范围
@@ -15,6 +15,8 @@
 
 ## 结论
 - 当前已具备“首局可理解展示版”标准。
-- 当前分支相对 `main` 的新增范围为 3 个提交：阶段 19 功能提交、M13 里程碑检查文档提交、M13 发布说明收口文档提交。
-- 主线当前未落后，当前分支边界仍然清晰，适合先做 review，再通过 PR 从 `feature/stage-19-keyboard-hint-and-first-run-guidance` 合回 `main`。
-- 现在先合回 `main` 更有助于后续阶段节奏；若继续留在当前分支直接做下一阶段，会继续放大 M13 边界。
+- 当前分支相对 `main` 的新增范围为 4 个提交：阶段 19 功能提交、M13 里程碑检查文档提交、M13 发布说明收口文档提交、M13 合回 main 准备检查文档提交。
+- 当前已具备正式创建 PR 的条件，且建议先做 review，再创建 PR。
+- 建议 `base branch = main`，`compare branch = feature/stage-19-keyboard-hint-and-first-run-guidance`。
+- 建议 PR 标题：`feat(m13): add first-run keyboard guidance`。
+- 建议 PR 描述要点：首局轻量按键提示、覆盖移动/射击/暂停/结果页关键操作、提示会自动消失或在首次相关操作后隐藏、当前版本达到“首局可理解展示版”标准。
