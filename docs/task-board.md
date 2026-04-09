@@ -1,7 +1,7 @@
 ﻿# Task Board
 
 ## 当前阶段
-- 阶段：M13：review / PR 信息准备
+- 阶段：M14：review / PR 信息准备
 - 状态：已完成
 
 ## 当前里程碑范围
@@ -14,9 +14,9 @@
 - 主菜单、设置、结果页中可看到展示版 build 信息
 
 ## 结论
-- 当前已具备“首局可理解展示版”标准。
-- 当前分支相对 `main` 的新增范围为 4 个提交：阶段 19 功能提交、M13 里程碑检查文档提交、M13 发布说明收口文档提交、M13 合回 main 准备检查文档提交。
+- 当前已达到“展示版结果收尾”标准。
+- 当前分支相对 `main` 的新增范围为 4 个提交：阶段 20 功能提交、M14 里程碑检查文档提交、M14 发布说明收口文档提交、M14 合回 main 准备检查文档提交。
 - 当前已具备正式创建 PR 的条件，且建议先做 review，再创建 PR。
-- 建议 `base branch = main`，`compare branch = feature/stage-19-keyboard-hint-and-first-run-guidance`。
-- 建议 PR 标题：`feat(m13): add first-run keyboard guidance`。
-- 建议 PR 描述要点：首局轻量按键提示、覆盖移动/射击/暂停/结果页关键操作、提示会自动消失或在首次相关操作后隐藏、当前版本达到“首局可理解展示版”标准。
+- 建议 `base branch = main`，`compare branch = feature/stage-20-session-summary-and-polish`。
+- 建议 PR 标题：`feat(m14): polish result screen session summary`。
+- 建议 PR 描述要点：结果页轻量总结、本局结果、击毁统计、展示版状态提示、当前版本达到“展示版结果收尾”标准。

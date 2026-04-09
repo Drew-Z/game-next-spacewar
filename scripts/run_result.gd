@@ -11,10 +11,13 @@ func _ready() -> void:
 	menu_button.pressed.connect(_on_menu_button_pressed)
 	replay_button.grab_focus()
 	result_title_label.text = RunResultState.outcome_title
+	var showcase_status := "Showcase Status: This build is ready for a complete menu-to-result demo."
 	result_body_label.text = "\n".join([
+		"Run Summary",
 		RunResultState.outcome_text,
 		"Destroyed Targets: %d/%d" % [RunResultState.destroyed_count, RunResultState.total_targets],
 		RunResultState.summary_text,
+		showcase_status,
 		"Replay: Press R or select Play Again",
 		"Menu: Press M, Esc, or select Main Menu",
 		RunResultState.build_text,
