@@ -99,6 +99,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "About / Help"
 
+[node name="CreditsButton" type="Button" parent="MarginContainer/Content"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Credits"
+
 [node name="Hint" type="Label" parent="MarginContainer/Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.701961, 0.776471, 0.862745, 1)
@@ -256,6 +262,77 @@ text = "Use this screen as a quick reference before starting the current showcas
 autowrap_mode = 3
 
 [node name="BackButton" type="Button" parent="HelpLayer/HelpPanel/MarginContainer/Content"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Back to Menu"
+
+[node name="CreditsLayer" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.0196078, 0.027451, 0.054902, 0.82)
+
+[node name="CreditsPanel" type="PanelContainer" parent="CreditsLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -180.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsLayer/CreditsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" type="VBoxContainer" parent="CreditsLayer/CreditsPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="CreditsLayer/CreditsPanel/MarginContainer/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.980392, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "SHOWCASE CREDITS"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CreditsLayer/CreditsPanel/MarginContainer/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.886275, 0.968627, 1)
+theme_override_font_sizes/font_size = 18
+text = "Project: game-next-spacewar\nEdition: Showcase Build\nBuild: Showcase Build 0.17"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Credits" type="Label" parent="CreditsLayer/CreditsPanel/MarginContainer/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.835294, 0.890196, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Credits:\n- Created by Drew-Z\n- Built as a playable local showcase in Godot"
+autowrap_mode = 3
+
+[node name="Note" type="Label" parent="CreditsLayer/CreditsPanel/MarginContainer/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.701961, 0.776471, 0.862745, 1)
+theme_override_font_sizes/font_size = 16
+text = "Use this panel as the final lightweight project signature for the current showcase build."
+autowrap_mode = 3
+
+[node name="BackButton" type="Button" parent="CreditsLayer/CreditsPanel/MarginContainer/Content"]
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
