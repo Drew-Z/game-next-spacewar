@@ -146,9 +146,9 @@ func _set_gameplay_active(active: bool) -> void:
 
 
 func _go_to_result_screen(title: String, outcome_text: String) -> void:
-	var summary_text := "Summary: You completed the current single-run demo."
+	var summary_text := "Run Summary: You cleared the current single-run showcase route."
 	if is_failed:
-		summary_text = "Summary: Your ship was lost before the run was cleared."
+		summary_text = "Run Summary: Your ship was lost before the run was cleared."
 
 	if is_paused:
 		_resume_game()
