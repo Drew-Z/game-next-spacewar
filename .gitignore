@@ -2,3 +2,5 @@
 .import/
 *.translation
 export_presets.cfg
+*.import
+*.uid

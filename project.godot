@@ -22,6 +22,10 @@ window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep"
 
+[gui]
+
+theme/custom="res://assets/fonts/ui_theme.tres"
+
 [rendering]
 
 renderer/rendering_method="forward_plus"
