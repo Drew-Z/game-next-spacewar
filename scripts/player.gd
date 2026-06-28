@@ -22,9 +22,12 @@ var controls_enabled := true
 var is_defeated := false
 var damage_cooldown_remaining := 0.0
 var fire_cooldown_remaining := 0.0
+var autoplay_enabled := false
+var autoplay_time := 0.0
 
 
 func _ready() -> void:
+	autoplay_enabled = OS.get_cmdline_user_args().has("--autoplay")
 	current_health = max_health
 	controls_enabled = true
 	health_changed.emit(current_health, max_health)
@@ -39,6 +42,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 
+	autoplay_time += delta
 	velocity = _get_move_input() * speed
 	move_and_slide()
 	_clamp_to_viewport()
@@ -48,6 +52,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _get_move_input() -> Vector2:
+	if autoplay_enabled:
+		return _get_autoplay_move_input()
+
 	var x := 0.0
 	var y := 0.0
 
@@ -64,7 +71,22 @@ func _get_move_input() -> Vector2:
 
 
 func _is_shoot_pressed() -> bool:
+	if autoplay_enabled:
+		return true
 	return Input.is_physical_key_pressed(KEY_SPACE) or Input.is_action_pressed("ui_accept")
+
+
+func _get_autoplay_move_input() -> Vector2:
+	var phase := fmod(autoplay_time, 4.8)
+	if phase < 1.0:
+		return Vector2(-0.75, -0.25)
+	if phase < 2.0:
+		return Vector2(0.85, -0.2)
+	if phase < 3.1:
+		return Vector2(0.55, 0.55)
+	if phase < 4.0:
+		return Vector2(-0.65, 0.35)
+	return Vector2(0.0, -0.45)
 
 
 func _try_fire() -> void:

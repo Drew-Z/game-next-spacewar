@@ -25,6 +25,11 @@ func _process(delta: float) -> void:
 		queue_free()
 
 
+func configure(config: Dictionary) -> void:
+	speed = float(config.get("speed", speed))
+	horizontal_drift = float(config.get("horizontal_drift", horizontal_drift))
+
+
 func set_gameplay_active(active: bool) -> void:
 	gameplay_active = active
 	if is_spent:
